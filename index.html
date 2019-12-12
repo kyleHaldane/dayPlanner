@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <title>Document</title>
+    <style>
+        th{
+            height: 100px;
+        }
+
+        input{
+            height: 150px;
+        }
+        .btn{
+            border-left: 1px solid black;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            background-color: #06AED5;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Day Planner</h1>
+          <p class="lead">Plan and updat your whole work day from 9 to 5</p>
+          <p class="date"></p>
+        </div>
+      </div>
+    <div class="container">
+        <div clss="row">
+            <div class="col">
+                <table clsss="table table-border table-striped table-dark" style="width: 100%">
+                    <colgroup>
+                        <col style="width: 20%; height: 50px">
+                        <col style="width: 65%; height: 50px">                    
+                        <col style="width: 15%; height: 50px">
+                    </colgroup>
+                    <thread>
+                        <tr>
+                            <th scope="col" >Time</th>
+                            <th scope="col">Events</th>
+                            <th scope="col">save</th>
+                        </tr>
+                    </thread>
+                    <tbody>
+                        <tr>
+                            <th scope="row">9:00 AM</th>
+                            <th><input class="form-control" type="text" placeholder="..."></th>
+                            <td><button type="button" class="btn btn-light">save</button></td>                           
+                        </tr>
+                        <tr>
+                            <th scope="row">10:00 AM</th>
+                            <td><input class="form-control" type="text" placeholder="..."></td>
+                            <td><button type="button" class="btn btn-light">save</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">11:00 AM</th>
+                            <td><input class="form-control" type="text" placeholder="..."></td>
+                            <td><button type="button" class="btn btn-light">save</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">12:00 PM</th>
+                            <td><input class="form-control" type="text" placeholder="..."></td>
+                            <td><button type="button" class="btn btn-light">save</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1:00 PM</th>
+                            <td><input class="form-control" type="text" placeholder="..."></td>
+                            <td><button type="button" class="btn btn-light">save</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2:00 PM</th>
+                            <td><input class="form-control" type="text" placeholder="..."></td>
+                            <td><button type="button" class="btn btn-light">save</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3:00 PM</th>
+                            <td><input class="form-control" type="text" placeholder="..."></td>
+                            <td><button type="button" class="btn btn-light">save</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4:00 PM</th>
+                            <td><input class="form-control" type="text" placeholder="..."></td>
+                            <td><button type="button" class="btn btn-light">save</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5:00 PM</th>
+                            <td><input class="form-control" type="text" placeholder="..."></td>
+                            <td><button type="button" class="btn btn-light">save</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(".date").text(new Date().toDateString());
+    
+    $(".btn").click(function(){
+
+    });
+</html>
