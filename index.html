@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <title>Document</title>
     <style>
-        th{
+        th {
             height: 100px;
         }
 
-        input{
+        input {
             height: 150px;
         }
-        .btn{
+
+        .btn {
             border-left: 1px solid black;
             border-top-right-radius: 15px;
             border-bottom-right-radius: 15px;
@@ -25,26 +28,27 @@
         }
     </style>
 </head>
+
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-          <h1 class="display-4">Day Planner</h1>
-          <p class="lead">Plan and updat your whole work day from 9 to 5</p>
-          <p class="date"></p>
+            <h1 class="display-4">Day Planner</h1>
+            <p class="lead">Plan and updat your whole work day from 9 to 5</p>
+            <p class="date"></p>
         </div>
-      </div>
+    </div>
     <div class="container">
         <div clss="row">
             <div class="col">
                 <table clsss="table table-border table-striped table-dark" style="width: 100%">
                     <colgroup>
                         <col style="width: 20%; height: 50px">
-                        <col style="width: 65%; height: 50px">                    
+                        <col style="width: 65%; height: 50px">
                         <col style="width: 15%; height: 50px">
                     </colgroup>
                     <thread>
                         <tr>
-                            <th scope="col" >Time</th>
+                            <th scope="col">Time</th>
                             <th scope="col">Events</th>
                             <th scope="col">save</th>
                         </tr>
@@ -52,47 +56,47 @@
                     <tbody>
                         <tr>
                             <th scope="row">9:00 AM</th>
-                            <th><input class="form-control" type="text" placeholder="..."></th>
-                            <td><button type="button" class="btn btn-light">save</button></td>                           
+                            <th><input id="9am" class="form-control" type="text" data-index="0" placeholder="..."></th>
+                            <td><button type="button" class="btn btn-light">save</button></td>
                         </tr>
                         <tr>
                             <th scope="row">10:00 AM</th>
-                            <td><input class="form-control" type="text" placeholder="..."></td>
+                            <td><input id="10am" class="form-control" type="text" data-index="1" placeholder="..."></td>
                             <td><button type="button" class="btn btn-light">save</button></td>
                         </tr>
                         <tr>
                             <th scope="row">11:00 AM</th>
-                            <td><input class="form-control" type="text" placeholder="..."></td>
+                            <td><input id="11am" class="form-control" type="text" data-index="2" placeholder="..."></td>
                             <td><button type="button" class="btn btn-light">save</button></td>
                         </tr>
                         <tr>
                             <th scope="row">12:00 PM</th>
-                            <td><input class="form-control" type="text" placeholder="..."></td>
+                            <td><input id="12pm" class="form-control" type="text" data-index="3" placeholder="..."></td>
                             <td><button type="button" class="btn btn-light">save</button></td>
                         </tr>
                         <tr>
                             <th scope="row">1:00 PM</th>
-                            <td><input class="form-control" type="text" placeholder="..."></td>
+                            <td><input id="1pm" class="form-control" type="text" data-index="4" placeholder="..."></td>
                             <td><button type="button" class="btn btn-light">save</button></td>
                         </tr>
                         <tr>
                             <th scope="row">2:00 PM</th>
-                            <td><input class="form-control" type="text" placeholder="..."></td>
+                            <td><input id="2pm" class="form-control" type="text" data-index="5" placeholder="..."></td>
                             <td><button type="button" class="btn btn-light">save</button></td>
                         </tr>
                         <tr>
                             <th scope="row">3:00 PM</th>
-                            <td><input class="form-control" type="text" placeholder="..."></td>
+                            <td><input id="3pm" class="form-control" type="text" data-index="6" placeholder="..."></td>
                             <td><button type="button" class="btn btn-light">save</button></td>
                         </tr>
                         <tr>
                             <th scope="row">4:00 PM</th>
-                            <td><input class="form-control" type="text" placeholder="..."></td>
+                            <td><input id="4pm" class="form-control" type="text" data-index="7" placeholder="..."></td>
                             <td><button type="button" class="btn btn-light">save</button></td>
                         </tr>
                         <tr>
                             <th scope="row">5:00 PM</th>
-                            <td><input class="form-control" type="text" placeholder="..."></td>
+                            <td><input id="5pm" class="form-control" type="text" data-index="8" placeholder="..."></td>
                             <td><button type="button" class="btn btn-light">save</button></td>
                         </tr>
                     </tbody>
@@ -102,9 +106,53 @@
     </div>
 </body>
 <script>
-    $(".date").text(new Date().toDateString());
-    
-    $(".btn").click(function(){
 
+    //prints date every second to the page 
+    setInterval(function(){
+        $(".date").text(new Date().toDateString());
+
+        var hours = new Date().getHours() - 9;
+        console.log(hours)
+        for(var j = 0; j < hours; ++j)
+            $("[data-index ="+j+"]").parent().attr("style","background-color: red");
+            //console.log($("[data-index ="+j+"]").parent())
+            
+        $("[data-index ="+hours+"]").parent().attr("style","background-color: gray");
+
+        for(var j = hours; j < 9; ++j)
+            $("[data-index ="+j+"]").parent().attr("style","background-color: green");
+    }, 1000);
+
+    //saves the values in the fields to local storage
+    $(".btn").on("click", function() {
+
+        //get the index of the button clicked for the given time with 9:00 am as 0 and 5:00 om as 9
+        var i = $(this).parent().parent().find(".form-control").attr("data-index");
+
+        //stores the data in the form at the button clicked to local storage 
+        localStorage.setItem("index"+i, $(this).parent().parent().find(".form-control").val());
+        console.log(i);
+        console.log($(this).parent().parent().find(".form-control").val());
+        console.log(localStorage.getItem("index0"))
     });
+
+    //saves data inputed to the lists
+    function open(){
+        $("#9am").val(localStorage.getItem("index0"));
+        $("#10am").val(localStorage.getItem("index1"));
+        $("#11am").val(localStorage.getItem("index2"));
+        $("#12pm").val(localStorage.getItem("index3"));
+        $("#1pm").val(localStorage.getItem("index4"));
+        $("#2pm").val(localStorage.getItem("index5"));
+        $("#3pm").val(localStorage.getItem("index5"));
+        $("#4pm").val(localStorage.getItem("index7"));
+        $("#5pm").val(localStorage.getItem("index8"));
+    }
+    open();
+
+
+
+
+</script>
+
 </html>
